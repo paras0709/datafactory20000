@@ -1,0 +1,12 @@
+{
+	"name": "dataworkspace10",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDW",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=dataworkspace10.sql.azuresynapse.net;initial catalog=datapool;user id=sqladminuser",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEM4MUExNDQ5LTM0M0EtNDEzMC1BNEQ5LTNBRjIxMDc0RTIyRl8zOTBjOGY4Ni1lMzIwLTQ3YTYtOWJkMi1iNTRiMmU2ZjMyYjkiDQp9"
+		}
+	}
+}
