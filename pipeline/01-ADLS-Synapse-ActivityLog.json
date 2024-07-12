@@ -20,6 +20,7 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
+							"wildcardFileName": "*.csv",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -28,7 +29,8 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"allowCopyCommand": true
+						"writeBehavior": "Insert",
+						"sqlWriterUseTableLock": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -37,114 +39,141 @@
 							{
 								"source": {
 									"name": "Correlationid",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Correlationid",
-									"type": "String"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Operationname",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Operationname",
-									"type": "String"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Status",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Status",
-									"type": "String"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Eventcategory",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Eventcategory",
-									"type": "String"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Level",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Level",
-									"type": "String"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Time",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Time",
-									"type": "DateTime"
+									"type": "DateTime",
+									"physicalType": "datetime"
 								}
 							},
 							{
 								"source": {
 									"name": "Subscription",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Subscription",
-									"type": "String"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Eventinitiatedby",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Eventinitiatedby",
-									"type": "String"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Resourcetype",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Resourcetype",
-									"type": "String"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Resourcegroup",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Resourcegroup",
-									"type": "String"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
 									"name": "Resource",
-									"type": "String"
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "Resource",
-									"type": "String"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							}
-						]
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
 					}
 				},
 				"inputs": [
